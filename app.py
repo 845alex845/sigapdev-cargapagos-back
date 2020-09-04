@@ -63,7 +63,7 @@ def index():
             # NO EXISTE EL USUARIO
             result = 2
         else:
-            cursor.execute("SELECT COUNT(*) FROM usuario where user_name=%s AND pass=%s", (username,password.lower(),))
+            cursor.execute("SELECT COUNT(*) FROM usuario where user_name=%s AND pass=%s", (username,password,))
             val_pass = cursor.fetchall()
             if int(val_pass[0][0]) != 0:
                 result = True
